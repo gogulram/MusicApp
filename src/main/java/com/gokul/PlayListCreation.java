@@ -15,8 +15,8 @@ public class PlayListCreation {
 		addSongsToPlayList("k", "helo");
 		addSongsToPlayList("k222", "friend2");
 
-		// showMyPlaylist("k");
-		// showMyPlaylist("k222");
+		showMyPlaylist("k");
+		showMyPlaylist("k222");
 
 	}
 
@@ -70,15 +70,11 @@ public class PlayListCreation {
 	 */
 	public static void showMyPlaylist(String playlistName) {
 		try {
-//       int songNo=0;
+
 			System.out.println(playlistName + ":" + allPlayLists.get(playlistName));
-//		for(String list:allPlayLists.keySet())
-//		{
-//			System.out.println("count:"+songNo+ allPlayLists.get(list));
-//			songNo++;
-//			
-//		}
-		} catch (Exception e) {
+
+		}
+		catch (Exception e) {
 
 		}
 

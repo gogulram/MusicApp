@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.gokul.HindiLanguage;
 import com.gokul.TamilLanguages;
 
 public class TamilLanguageTest {
@@ -45,5 +46,30 @@ public class TamilLanguageTest {
 		
 	}
 	
+	   /**
+  * test for searching a song which is available in database
+  */
+	@Test
+	public void SearchForSongsWithAvailableSong()
+	{
+		String movieName="MASTER";
+		String songName="vaathiraid";
+		boolean isAvailable =TamilLanguages.searchSongs(movieName,songName);
+		assertTrue(isAvailable);
+	}
+	
+	/**
+	 * test for searching a song which is not available
+	 */
+	@Test
+	public void SearchForSongsWithNotAvailableSong()
+	{
+		String movieName="SOORARAIPOTRU";
+		String songName="Mannurunda23";
+		boolean isAvailable =TamilLanguages.searchSongs(movieName,songName);
+		assertFalse(isAvailable);
+	}
+	
+
 	
 }

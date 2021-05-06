@@ -29,7 +29,7 @@ public class TamilLanguages {
 	 */
 		public static boolean doesMovieExist(String Movie) {
 			boolean isExists = false;
-			if(stringValidator(Movie))
+			if(AvailableLanguages.stringValidator(Movie))
 			{
 			Movie= Movie.toUpperCase();
 			 try {
@@ -47,7 +47,7 @@ public class TamilLanguages {
 		 * @param Movie
 		 */
 		public static void displayAllSongs(String Movie) {
-			if(stringValidator(Movie))
+			if(AvailableLanguages.stringValidator(Movie))
 			{
 			Movie=Movie.toUpperCase();
 			System.out.println(Movie);
@@ -84,25 +84,22 @@ public class TamilLanguages {
 	 	     }
 			 return size;
 		 }
-		/**
-		 * it checks that the given input is valid string or not 
-		 * returns true if it is a valid string
-		 * false if its not a valid string 
-		 * @param language
-		 * @return
-		 */
-		 public static boolean stringValidator(String language)
-			{
-			
-			boolean valid=false;
-			if(language!=" ")
-			{
-			 valid=true;
+		
+			public static boolean searchSongs(String MovieName, String song) {
+				boolean exists = false;
+				MovieName=MovieName.toUpperCase();
+
+				ArrayList<String> songList = new ArrayList<String>();
+				songList = TamilMovieSongs.get(MovieName);
+				System.out.println(songList);
+				boolean songExists = songList.contains(song);
+				if (songExists) {
+					exists = true;
+				}
+
+				return exists;
+
 			}
-			
-			return valid;
-				
-			}
-			
+
 
 }

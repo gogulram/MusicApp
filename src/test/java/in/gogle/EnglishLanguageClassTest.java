@@ -30,8 +30,8 @@ public class EnglishLanguageClassTest {
 
 	@Test
 	public void MovieExistorNotWithIncorrectDetails() {
-		String Movie = "IMAGINEDGans";
-		boolean exist = TamilLanguages.doesMovieExist(Movie);
+		String Movie = "IMAGINED_Gans";
+		boolean exist = EnglishLanguage.doesMovieExist(Movie);
 		assertFalse(exist);
 
 	}
@@ -47,26 +47,24 @@ public class EnglishLanguageClassTest {
 	}
 
 	/**
-	 * test for valid string with incorrect details
-	 *
+	 * test for searching a song which is available in database
 	 */
 	@Test
-	public void TestStringValidatorWithCorrectDetails() {
-		String name = "English";
-		boolean isValid = TamilLanguages.stringValidator(name);
-		assertTrue(isValid);
-
+	public void SearchForSongsWithAvailableSong() {
+		String movieName = "Marshmello";
+		String songName = "Friends";
+		boolean isAvailable = EnglishLanguage.searchSongs(movieName, songName);
+		assertTrue(isAvailable);
 	}
 
 	/**
-	 * test for valid string with correct details
-	 *
+	 * test for searching a song which is not available
 	 */
 	@Test
-	public void TeststringValidatorWithIncorrectDetails() {
-		String name=" ";
-		boolean isValid = TamilLanguages.stringValidator(name);
-		assertFalse(isValid);
-
+	public void SearchForSongsWithNotAvailableSong() {
+		String movieName = "IMAGINEDRAGans";
+		String songName = "Friends";
+		boolean isAvailable = EnglishLanguage.searchSongs(movieName, songName);
+		assertFalse(isAvailable);
 	}
 }
